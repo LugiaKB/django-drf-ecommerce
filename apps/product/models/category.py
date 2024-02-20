@@ -3,6 +3,9 @@ from mptt.models import MPTTModel, TreeForeignKey
 
 
 class Category(MPTTModel):
+    class Meta:
+        app_label = "product"
+
     name = models.CharField(max_length=100)
     parent = TreeForeignKey(
         "self",

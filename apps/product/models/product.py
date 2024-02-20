@@ -4,6 +4,9 @@ from mptt.models import TreeForeignKey
 
 
 class Product(models.Model):
+    class Meta:
+        app_label = "product"
+
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
     is_digital = models.BooleanField(default=False)
