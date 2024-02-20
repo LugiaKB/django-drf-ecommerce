@@ -6,7 +6,7 @@ class Category(MPTTModel):
     class Meta:
         app_label = "product"
 
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     parent = TreeForeignKey(
         "self",
         on_delete=models.PROTECT,
